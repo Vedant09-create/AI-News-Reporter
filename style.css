@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0f0f0f;
+    font-family: 'Roboto Mono', "Lucida Console", "Courier New", monospace;
+    color: white;
+}
+/* SECTION 1 */
+.robot-img {
+    width: 120px;  /* Adjust the size of the robot image */
+    height: auto;  /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,#004) ;
+    line-height: 0.07em ;
+}
+
+.section-1 {
+    max-width: 1040px;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 200px;
+
+}
+.section-1-header {
+    max-height: 66px;
+    display: flex;
+    justify-content: space-between;
+}
+.section-1-header-logo img {
+    height: 100%;
+}
+.section-1-header-options {
+    display: flex;
+    align-items: center;
+}
+
+.section-1-header-options div {
+    opacity: .8;
+    font-size: 18px;
+    line-height: 36px;
+    white-space: nowrap;
+    margin: 0 20px 0 36px;
+}
+.section-1-main {
+    text-align: center;
+}
+.section-1-main-1 {
+    margin-top: 100px;
+    font-size: 60px;
+    line-height: 125px;
+    letter-spacing: -3px;
+    font-weight: 700;
+    
+}
+.section-1-main-2 {
+    font-size: 30px;
+    letter-spacing: -0.2px;
+    line-height: 38px;
+    margin-top: 35px;
+    font-weight: 700;
+}
+.section-1-main-3 {
+    margin-top: 58px;
+}
+.section-1-main-3 button {
+    padding: 20px 65px;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: rgb(238, 24, 24);
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.typing {
+    visibility: visible;
+}
+
+.typing.hidden {
+    visibility: hidden;
+}
+/* SECTION 2 */
+.section-2 {
+    position: relative;
+    height: 100vh;  /* Full height of the viewport */
+    /*background: url('b.jpg');*/
+    background-size: cover;  /* Cover the entire section */
+    background-position: center;  /* Center the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('7.jpg') no-repeat center center/cover;
+        filter: blur(2px) brightness(0.8);
+        z-index: -1;
+        animation: zoomEffect 3s infinite alternate ease-in-out;
+    }
+    @keyframes zoomEffect {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.section-2-content h2 {
+    font-size: 22px; /* Reduced from 32px */
+    margin-bottom: 16px;
+}
+
+.section-2-content h3 {
+    font-size: 22px; /* Reduced from 24px */
+    margin-bottom: 12px;
+}
+
+.section-2-content h4 {
+    font-size: 18px; /* Reduced from 20px */
+    margin-bottom: 10px;
+    font-weight: 600; /* Optional: Slightly bold for emphasis */
+}
+
+.section-2-content p {
+    font-size: 14px; /* Reduced from 16px */
+    line-height: 1.4; /* Slightly tighter spacing */
+    margin-bottom: 8px;
+}
+
+.section-2-content ul {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.section-2-content li {
+    font-size: 14px; /* Reduced font size for list items */
+    line-height: 1.4;
+    margin-bottom: 6px; /* Reduced spacing between bullet points */
+}
+
+
+
+/* Animation Styles */
+.banner {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.banner .slider {
+    width: 200px; /* Increased size */
+    height: 200px; /* Increased size */
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 15s linear infinite;
+    z-index: 2;
+}
+
+@keyframes autoRun {
+    from {
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+    }
+    to {
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+
+.banner .slider .item {
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(250px); /* Adjusted for larger size */
+}
+
+.banner .slider .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner .content {
+    position: absolute;
+    top: 90%; /* Position the text below the animation */
+    text-align: center;
+    z-index: 3;
+}
+
+.banner .content h1 {
+    font-family: 'ICA Rubrik';
+    font-size: 10em; /* Larger text */
+    color: #85868f;
+    margin: 0;
+    position: relative;
+}
+.content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em; /* Adjust size for readability */
+    color: #d2d2d2;
+    margin-top: 20px; /* Add margin to create spacing */
+    line-height: 1.6; /* Increase readability */
+}
+
+.banner .content h1::after {
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 1px #d2d2d2;
+    color: transparent;
+}
+
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1023px) {
+    .banner .slider {
+        width: 300px; /* Smaller for medium screens */
+        height: 300px;
+    }
+    .banner .slider .item {
+        transform: 
+            rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(200px);
+    }
+    .banner .content h1 {
+        font-size: 3em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .banner .slider {
+        width: 200px; /* Smaller for small screens */
+        height: 200px;
+    }
+    .banner .slider .item {
+        transform: 
+            rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(150px);
+    }
+    .banner .content h1 {
+        font-size: 2em;
+    }
+}
+
+.news-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.news-item h3 {
+    color: #ff6347; /* Highlight news titles */
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.news-item div {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
